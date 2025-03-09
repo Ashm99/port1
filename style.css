@@ -1,0 +1,202 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 15px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+/* Landing Section */
+#landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: #f4f4f4;
+  position: relative;
+  text-align: center;
+}
+
+/* Updated About Section Styles */
+#about {
+    margin-bottom: 50px;
+    max-width: 600px;   /* Limits the text width */
+    margin-left: auto;  /* Centers the section horizontally */
+    margin-right: auto; /* Centers the section horizontally */
+    padding: 0 20px;    /* Adds horizontal padding for smaller screens */
+}
+
+.profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#scroll-indicator {
+    position: absolute;
+    bottom: 20px;
+    cursor: pointer;
+    z-index: 100;           /* Ensure it's on top */
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;        /* Enlarges the clickable area */
+}
+    
+  #scroll-indicator .arrow {
+    font-size: 2.5rem;      /* Slightly larger for better touch targets */
+    animation: bounce 2s infinite;
+    display: inline-block;
+}  
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Hide elements with hidden class */
+.hidden {
+  display: none;
+}
+
+/* Portfolio Section */
+#portfolio {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar styles */
+#sidebar {
+  width: 250px;
+  background: #333;
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#sidebar .profile-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#sidebar .profile-info .profile-img {
+  width: 100px;
+  height: 100px;
+}
+
+#sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+#sidebar nav ul li {
+  margin: 15px 0;
+}
+
+#sidebar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+/* Main content styles */
+main {
+  flex: 1;
+  padding: 40px;
+  background: #fff;
+  overflow-y: auto;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.project {
+  background: #eee;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
+.project a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.project a:hover {
+  text-decoration: underline;
+}
+
+/* Dark Theme Styles */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark main {
+  background: #1e1e1e;
+}
+
+body.dark #sidebar {
+  background: #1e1e1e;
+}
+
+body.dark #theme-toggle {
+  background: #e0e0e0;
+  color: #121212;
+}
+
+body.dark a {
+  color: #bb86fc;
+}
+
+/* Dark Theme Adjustments for Landing & Projects */
+body.dark #landing {
+  background: #121212;
+}
+
+body.dark .project {
+  background: #333;
+}
+/* Increase profile image size in the About section on landing page */
+#landing #about .profile-img {
+    width: 200px;
+    height: 200px;
+}
+  
