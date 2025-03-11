@@ -5,6 +5,127 @@ body {
   padding: 0;
   background-color: #f4f4f4;
   color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark theme */
+body.dark {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+/* Sidebar */
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 100%;
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  transition: background 0.3s;
+}
+
+#sidebar .profile-info {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#sidebar .profile-info .profile-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#sidebar .profile-info h1 {
+  font-size: 2rem;
+  margin: 10px 0 5px;
+  color: #bb86fc;
+}
+
+#sidebar h2 {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+#sidebar .tagline {
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+#sidebar nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+#sidebar nav ul li {
+  margin: 15px 0;
+}
+
+#sidebar nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+#sidebar nav ul li a.active,
+#sidebar nav ul li a:hover {
+  color: #bb86fc;
+}
+
+/* Social icons in sidebar */
+.social-icons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: #bb86fc;
+}
+
+/* Main Content */
+#main-content {
+  margin-left: 370px; /* sidebar width + gap */
+  padding: 20px;
+  transition: margin-left 0.3s;
+}
+
+main section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: background 0.3s;
+}
+
+body.dark main section {
+  background: #1e1e1e;
+}
+
+/* Section Titles */
+main section h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s;
+}
+
+body.dark main section h2 {
+  border-color: #e0e0e0;
 }
 
 /* Theme Toggle Button */
@@ -19,162 +140,7 @@ body {
   border-radius: 5px;
   cursor: pointer;
   z-index: 1000;
-}
-
-/* Landing Section */
-#landing {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background: #f4f4f4;
-  position: relative;
-  text-align: center;
-}
-
-/* Updated About Section Styles */
-#about {
-    margin-bottom: 50px;
-    max-width: 600px;   /* Limits the text width */
-    margin-left: auto;  /* Centers the section horizontally */
-    margin-right: auto; /* Centers the section horizontally */
-    padding: 0 20px;    /* Adds horizontal padding for smaller screens */
-}
-
-.profile-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-#scroll-indicator {
-    position: absolute;
-    bottom: 20px;
-    cursor: pointer;
-    z-index: 100;           /* Ensure it's on top */
-    width: 100%;
-    text-align: center;
-    padding: 10px 0;        /* Enlarges the clickable area */
-}
-    
-  #scroll-indicator .arrow {
-    font-size: 2.5rem;      /* Slightly larger for better touch targets */
-    animation: bounce 2s infinite;
-    display: inline-block;
-}  
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(-10px);
-  }
-  60% {
-    transform: translateY(-5px);
-  }
-}
-
-/* Hide elements with hidden class */
-.hidden {
-  display: none;
-}
-
-/* Portfolio Section */
-#portfolio {
-  display: flex;
-  min-height: 100vh;
-}
-
-/* Sidebar styles */
-#sidebar {
-  width: 250px;
-  background: #333;
-  color: white;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-#sidebar .profile-info {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-#sidebar .profile-info .profile-img {
-  width: 100px;
-  height: 100px;
-}
-
-#sidebar nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-#sidebar nav ul li {
-  margin: 15px 0;
-}
-
-#sidebar nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-
-/* Main content styles */
-main {
-  flex: 1;
-  padding: 40px;
-  background: #fff;
-  overflow-y: auto;
-}
-
-section {
-  margin-bottom: 40px;
-}
-
-h2 {
-  border-bottom: 2px solid #333;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-.project {
-  background: #eee;
-  padding: 15px;
-  margin: 10px 0;
-  border-radius: 5px;
-}
-
-.project a {
-  display: inline-block;
-  margin-top: 10px;
-  text-decoration: none;
-  color: #007bff;
-  font-weight: bold;
-}
-
-.project a:hover {
-  text-decoration: underline;
-}
-
-/* Dark Theme Styles */
-body.dark {
-  background-color: #121212;
-  color: #e0e0e0;
-}
-
-body.dark main {
-  background: #1e1e1e;
-}
-
-body.dark #sidebar {
-  background: #1e1e1e;
+  transition: background 0.3s, color 0.3s;
 }
 
 body.dark #theme-toggle {
@@ -182,21 +148,23 @@ body.dark #theme-toggle {
   color: #121212;
 }
 
-body.dark a {
-  color: #bb86fc;
-}
-
-/* Dark Theme Adjustments for Landing & Projects */
-body.dark #landing {
-  background: #121212;
-}
-
-body.dark .project {
-  background: #333;
-}
-/* Increase profile image size in the About section on landing page */
-#landing #about .profile-img {
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #sidebar {
     width: 200px;
-    height: 200px;
+  }
+  #main-content {
+    margin-left: 220px;
+  }
 }
-  
+
+@media (max-width: 576px) {
+  #sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  #main-content {
+    margin-left: 0;
+  }
+}

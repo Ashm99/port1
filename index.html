@@ -1,90 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ashok | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <!-- Font Awesome CSS for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div class="profile-info text-center">
+        <img
+          src="images/Profile.JPG"
+          alt="Profile Picture"
+          class="profile-img"
+        />
+        <h1><b>Ashok Kumar</b></h1>
+        <h2><b>Java Full-Stack Developer</b></h2>
+        <p class="tagline">
+          Professional with strong Java knowledge, eager to join the industry.
+        </p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#about" class="nav-link active">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+        </ul>
+      </nav>
+      <div class="social-icons text-center">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </aside>
 
-<body>
+    <!-- Main Content -->
+    <main id="main-content">
+      <section id="about">
+        <div class="container">
+          <h2>About Me</h2>
+          <p>
+            I am a self-motivated and passionate Java Full-stack Developer eager
+            to launch my career in web development. Although I am at the
+            beginning of my professional journey and have yet to gain real-world
+            experience in Java development, I have invested significant time in
+            learning modern web technologies and building personal projects that
+            showcase my dedication and growing expertise.
+          </p>
+          <p>
+            I believe that every project is a chance to grow, and I’m excited to
+            contribute fresh ideas, creative solutions, and a proactive attitude
+            to a dynamic team. I’m ready to tackle real-world challenges,
+            collaborate effectively, and bring my enthusiasm for coding to every
+            opportunity that comes my way.
+          </p>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="container">
+          <h2>Skills</h2>
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="projects">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="project">
+            <h3>Project Name</h3>
+            <p>Short description of the project.</p>
+            <a href="#">View Project</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications">
+        <div class="container">
+          <h2>Certifications</h2>
+          <p>List your certifications here.</p>
+        </div>
+      </section>
+
+      <section id="education">
+        <div class="container">
+          <h2>Education</h2>
+          <p>Provide details about your academic background.</p>
+        </div>
+      </section>
+    </main>
+
     <!-- Theme Toggle Button -->
     <button id="theme-toggle">Toggle Theme</button>
 
-    <!-- Landing Section -->
-    <div id="landing">
-        <section id="about">
-            <img src="images/Profile.JPG" alt="Profile Picture" class="profile-img" />
-            <h1>Ashok Kumar</h1>
-            <h2>Java Full-Stack Web Developer</h2>
-            <p>I am a self-motivated and passionate Java Full-stack Developer eager to launch my career in web development. Although I am at the beginning of my professional journey and have yet to gain real-world experience in Java development, I have invested significant time in learning modern web technologies and building personal projects that showcase my dedication and growing expertise.</p>
-            <p>I believe that every project is a chance to grow, and I’m excited to contribute fresh ideas, creative solutions, and a proactive attitude to a dynamic team. I’m ready to tackle real-world challenges, collaborate effectively, and bring my enthusiasm for coding to every opportunity that comes my way.</p>
-        </section>
-        <div id="scroll-indicator">
-            <span class="arrow">&#8679;</span>
-            <p>Swipe or click the arrow to explore</p>
-        </div>
-    </div>
-
-    <!-- Portfolio Section (hidden initially) -->
-    <div id="portfolio" class="hidden">
-        <aside id="sidebar">
-            <div class="profile-info">
-                <img src="images/Profile.JPG" alt="Profile Picture" class="profile-img" />
-                <h1>Ashok Kumar</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <main>
-            <section id="skills">
-                <h2>Skills</h2>
-                <ul>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>JavaScript</li>
-                    <li>React</li>
-                    <li>Node.js</li>
-                </ul>
-            </section>
-
-            <section id="projects">
-                <h2>Projects</h2>
-                <div class="project">
-                    <h3>Project Name</h3>
-                    <p>Short description of the project.</p>
-                    <a href="#">View Project</a>
-                </div>
-            </section>
-
-            <section id="certifications">
-                <h2>Certifications</h2>
-                <p>List your certifications here.</p>
-            </section>
-
-            <section id="education">
-                <h2>Education</h2>
-                <p>Provide details about your academic background.</p>
-            </section>
-
-            <section id="contact">
-                <h2>Contact</h2>
-                <p>Email: your.email@example.com</p>
-                <p>LinkedIn: <a href="#">Your Profile</a></p>
-            </section>
-        </main>
-    </div>
-
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>

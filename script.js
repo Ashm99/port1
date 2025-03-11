@@ -1,30 +1,55 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Theme toggle functionality
-    const themeToggle = document.getElementById("theme-toggle");
-    themeToggle.addEventListener("click", () => {
-      document.body.classList.toggle("dark");
+document.addEventListener('DOMContentLoaded', () => {
+  // Theme toggle functionality
+  const themeToggle = document.getElementById('theme-toggle');
+  themeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+  });
+
+  // Scroll Spy & Hover Highlight for Sidebar Navigation
+  const sections = document.querySelectorAll('main section');
+  const navLinks = document.querySelectorAll('#sidebar nav ul li a');
+
+  // IntersectionObserver options
+  const observerOptions = {
+    root: document.querySelector('#main-content'),
+    rootMargin: '0px',
+    threshold: 0.5 // when 50% of the section is visible
+  };
+
+  // Observer callback to add/remove active class
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Remove active class from all nav links
+        navLinks.forEach(link => link.classList.remove('active'));
+        // Add active class to the link corresponding to the visible section
+        const id = entry.target.getAttribute('id');
+        const activeLink = document.querySelector(`#sidebar nav ul li a[href="#${id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      }
     });
-    
-    // Function to show portfolio and hide landing
-    function showPortfolio() {
-      document.getElementById("landing").classList.add("hidden");
-      document.getElementById("portfolio").classList.remove("hidden");
-    }
-    
-    // Click event for scroll indicator
-    const scrollIndicator = document.getElementById("scroll-indicator");
-    scrollIndicator.addEventListener("click", showPortfolio);
-    
-    // Touch events for swipe up on scroll indicator
-    let startY = 0;
-    scrollIndicator.addEventListener("touchstart", (e) => {
-      startY = e.touches[0].clientY;
+  }, observerOptions);
+
+  sections.forEach(section => {
+    observer.observe(section);
+    // Additionally, highlight nav link on hover over a section
+    section.addEventListener('mouseover', () => {
+      navLinks.forEach(link => link.classList.remove('active'));
+      const id = section.getAttribute('id');
+      const activeLink = document.querySelector(`#sidebar nav ul li a[href="#${id}"]`);
+      if (activeLink) activeLink.classList.add('active');
     });
-    scrollIndicator.addEventListener("touchend", (e) => {
-      let endY = e.changedTouches[0].clientY;
-      if (startY - endY > 50) { // if swiped up more than 50px
-        showPortfolio();
+  });
+
+  // Smooth scrolling for nav links
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href').substring(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: 'smooth' });
       }
     });
   });
-  
+});
