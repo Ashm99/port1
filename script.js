@@ -1,8 +1,24 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Theme toggle functionality
-  const themeToggle = document.getElementById('theme-toggle');
-  themeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
+  const themeToggle = document.getElementById("theme-toggle");
+  const body = document.body;
+  const icon = themeToggle.querySelector("i");
+
+  // Check if user has a saved theme preference
+  if (localStorage.getItem("theme") === "dark") {
+    body.classList.add("dark");
+    icon.classList.replace("fa-moon", "fa-sun"); // Show sun icon in dark mode
+  }
+
+  themeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    if (body.classList.contains("dark")) {
+      icon.classList.replace("fa-moon", "fa-sun");
+      localStorage.setItem("theme", "dark");
+    } else {
+      icon.classList.replace("fa-sun", "fa-moon");
+      localStorage.setItem("theme", "light");
+    }
   });
 
   // Scroll Spy & Hover Highlight for Sidebar Navigation

@@ -148,11 +148,59 @@ body.dark main section h2 {
   align-items: center;
   gap: 8px;
   font-size: 18px;
-  transition: transform 0.2s;
+  transition: transform 0.3s, color 0.3s;
 }
 #skills li:hover{
   transform: scale(1.1);
 }
+body #skills li .white-icon{
+  transition: color 0.3s;
+}
+body.dark #skills li .white-icon{
+  color: #fff;
+}
+.project {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s, color 0.3s, background 0.3s;
+}
+
+.project:hover {
+  background: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.project p {
+  font-size: 1rem;
+}
+
+.project .btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 10px;
+  transition: transform 0.3s;
+}
+.project .btn:hover{
+  transform: translateY(-5px);
+}
+
+.project .btn i {
+  font-size: 1.2rem;
+}
+
+body.dark .project{
+  background: #1e1e1e;
+}
+
+body.dark .project:hover{
+  background: #121212;
+}
+
 /* Theme Toggle Button */
 #theme-toggle {
   position: fixed;
@@ -171,6 +219,10 @@ body.dark main section h2 {
 body.dark #theme-toggle {
   background: #e0e0e0;
   color: #121212;
+}
+
+#theme-toggle i {
+  font-size: 1.2rem;
 }
 
 /* Responsive adjustments */
