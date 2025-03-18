@@ -153,10 +153,10 @@ body.dark main section h2 {
 #skills li:hover{
   transform: scale(1.1);
 }
-body #skills li .white-icon{
+body #skills li .dark-theme-white-icon{
   transition: color 0.3s;
 }
-body.dark #skills li .white-icon{
+body.dark #skills li .dark-theme-white-icon{
   color: #fff;
 }
 .project {
@@ -166,12 +166,6 @@ body.dark #skills li .white-icon{
   margin-bottom: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s, box-shadow 0.3s, color 0.3s, background 0.3s;
-}
-
-.project:hover {
-  background: #fff;
-  transform: translateY(-5px);
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .project p {
@@ -185,19 +179,42 @@ body.dark #skills li .white-icon{
   margin-top: 10px;
   transition: transform 0.3s;
 }
-.project .btn:hover{
-  transform: translateY(-5px);
-}
 
 .project .btn i {
   font-size: 1.2rem;
 }
 
-body.dark .project{
+.certification {
+  background: #f4f4f4;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.certification .btn {
+  transition: transform 0.3s;
+}
+
+.project:hover,
+.certification:hover {
+  background: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.project .btn:hover,
+.certification .btn:hover{
+  transform: translateY(-5px);
+}
+
+body.dark .project,
+body.dark .certification{
   background: #1e1e1e;
 }
 
-body.dark .project:hover{
+body.dark .project:hover,
+body.dark .certification:hover{
   background: #121212;
 }
 
