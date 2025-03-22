@@ -5,7 +5,7 @@ body {
   padding: 0;
   background-color: #f4f4f4;
   color: #333;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 /* Dark theme */
@@ -26,7 +26,7 @@ body.dark {
   padding: 20px;
   box-sizing: border-box;
   overflow-y: auto;
-  transition: background 0.3s;
+  transition: background 0.3s ease-in-out;
 }
 
 #sidebar .profile-info {
@@ -70,7 +70,7 @@ body.dark {
   color: #fff;
   text-decoration: none;
   font-size: 1.1rem;
-  transition: color 0.3s;
+  transition: color 0.3s ease-in-out;
 }
 
 #sidebar nav ul li a.active,
@@ -88,7 +88,7 @@ body.dark {
   font-size: 1.7rem;
   margin: 0 10px;
   display: inline-block;
-  transition: transform 0.2s, color 0.3s;
+  transition: transform 0.2s ease-in-out, color 0.3s ease-in-out;
 }
 
 .social-icons a:hover {
@@ -100,15 +100,15 @@ body.dark {
 #main-content {
   margin-left: 370px; /* sidebar width + gap */
   padding: 20px;
-  transition: margin-left 0.3s;
+  transition: margin-left 0.3s ease-in-out;
 }
 
 main section {
   margin-bottom: 40px;
-  padding: 20px;
+  padding: 30px;
   background: #f4f4f4;
   border-radius: 8px;
-  transition: background 0.3s, box-shadow 0.3s;
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 main section:hover{
   background: #fff;
@@ -128,7 +128,7 @@ main section h2 {
   border-bottom: 2px solid #333;
   padding-bottom: 10px;
   margin-bottom: 20px;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s ease-in-out;
 }
 
 body.dark main section h2 {
@@ -148,13 +148,13 @@ body.dark main section h2 {
   align-items: center;
   gap: 8px;
   font-size: 18px;
-  transition: transform 0.3s, color 0.3s;
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 #skills li:hover{
   transform: scale(1.1);
 }
 body #skills li .dark-theme-white-icon{
-  transition: color 0.3s;
+  transition: color 0.3s ease-in-out;
 }
 body.dark #skills li .dark-theme-white-icon{
   color: #fff;
@@ -165,7 +165,7 @@ body.dark #skills li .dark-theme-white-icon{
   border-radius: 8px;
   margin-bottom: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s, color 0.3s, background 0.3s;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, color 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
 .project p {
@@ -177,7 +177,7 @@ body.dark #skills li .dark-theme-white-icon{
   align-items: center;
   gap: 8px;
   margin-top: 10px;
-  transition: transform 0.3s;
+  transition: all 0.3s ease-in-out;
 }
 
 .project .btn i {
@@ -190,10 +190,69 @@ body.dark #skills li .dark-theme-white-icon{
   border-radius: 8px;
   margin-bottom: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 .certification .btn {
-  transition: transform 0.3s;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Education Section Styling */
+
+#education h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  border-bottom: 2px solid #333;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Each education entry */
+.education-entry {
+  border-left: 4px solid #333; /* Vertical highlight */
+  padding: 15px 20px;
+  margin: 20px 0;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Circle at the start of each entry (Timeline effect) */
+.education-entry::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 10px;
+  width: 15px;
+  height: 15px;
+  background: #333;
+  border-radius: 50%;
+}
+
+/* Headings and details */
+.education-entry h3 {
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+
+.edu-institution, .edu-year, .edu-score {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Hover effect for a subtle lift */
+.education-entry:hover {
+  background: #f9f9f9;
+  transform: translateX(5px);
+  border-left-color: #bb86fc; /* Matches your theme */
+}
+
+body.dark #education h2 {
+  border-color: #e0e0e0;
+}
+
+body.dark .education-entry {
+  border-left-color: #e0e0e0;
+  background: #1e1e1e;
 }
 
 .project:hover,
@@ -206,6 +265,9 @@ body.dark #skills li .dark-theme-white-icon{
 .project .btn:hover,
 .certification .btn:hover{
   transform: translateY(-5px);
+  background-color: #bb86fc;
+  border-color: #bb86fc;
+  color: #343a40;
 }
 
 body.dark .project,
@@ -218,6 +280,10 @@ body.dark .certification:hover{
   background: #121212;
 }
 
+body.dark .education-entry:hover{
+  background: #121212;
+  border-left-color: #bb86fc;
+}
 /* Theme Toggle Button */
 #theme-toggle {
   position: fixed;
@@ -230,7 +296,7 @@ body.dark .certification:hover{
   border-radius: 5px;
   cursor: pointer;
   z-index: 1000;
-  transition: background 0.3s, color 0.3s;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 body.dark #theme-toggle {
